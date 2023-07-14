@@ -1,0 +1,871 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.ontologies.khaos.uma.es/electricity-company#"
+     xml:base="http://www.ontologies.khaos.uma.es/electricity-company"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:electricity-company="http://www.ontologies.khaos.uma.es/electricity-company/">
+    <owl:Ontology rdf:about="http://www.ontologies.khaos.uma.es/electricity-company"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/associatedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/associatedWith">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Consumption"/>
+        <rdfs:range rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Contract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/hasConsumption -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/hasConsumption">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Client"/>
+        <rdfs:range rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Consumption"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/hasContract -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/hasContract">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Client"/>
+        <rdfs:range rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Contract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/hasContractedPower -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/hasContractedPower">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Contract"/>
+        <rdfs:range rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Power"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/hasDay -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/hasDay">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/DayType"/>
+        <rdfs:range rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Day"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/hasDayType -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/hasDayType">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/SchedulerTime"/>
+        <rdfs:range rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/DayType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/hasMonth -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/hasMonth">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Season"/>
+        <rdfs:range rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Month"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/hasPowerPeriod -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/hasPowerPeriod">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Power"/>
+        <rdfs:range rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Period"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/hasPrice -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/hasPrice">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Rate"/>
+        <rdfs:range rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Price"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/hasPricePeriod -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/hasPricePeriod">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Price"/>
+        <rdfs:range rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Period"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/hasSchedulerTime -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/hasSchedulerTime">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Period"/>
+        <rdfs:range rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/SchedulerTime"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/hasSeason -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/hasSeason">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/DayType"/>
+        <rdfs:range rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Season"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/hasTimeSlot -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/hasTimeSlot">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/SchedulerTime"/>
+        <rdfs:range rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TimeSlot"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/powerConsumed -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/powerConsumed">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Consumption"/>
+        <rdfs:range rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Power"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/consumptionDays -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/consumptionDays">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Consumption"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/date -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/date">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/DayType"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/dayOff -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/dayOff">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/DayType"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/endDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/endDate">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Consumption"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/endHour -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/endHour">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TimeSlot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/price -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/price">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Power"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/startDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/startDate">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Consumption"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/startHour -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/startHour">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TimeSlot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#unsignedInt"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Client -->
+
+    <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Client"/>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Consumption -->
+
+    <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Consumption"/>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Contract -->
+
+    <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Contract"/>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Day -->
+
+    <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Day"/>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/DayType -->
+
+    <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/DayType"/>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Month -->
+
+    <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Month"/>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Period -->
+
+    <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Period"/>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Power -->
+
+    <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Power"/>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Price -->
+
+    <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Price"/>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Rate -->
+
+    <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Rate"/>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/SchedulerTime -->
+
+    <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/SchedulerTime"/>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Season -->
+
+    <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Season"/>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/TimeSlot -->
+
+    <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/TimeSlot"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/A-P1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/A-P1">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/SchedulerTime"/>
+        <electricity-company:hasDayType rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TipoA"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria18-22"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria9-14"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/A-P2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/A-P2">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/SchedulerTime"/>
+        <electricity-company:hasDayType rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TipoA"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria14-18"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria22-0"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria8-9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/A-P6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/A-P6">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/SchedulerTime"/>
+        <electricity-company:hasDayType rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TipoA"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria0-8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Abril -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Abril">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Month"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Agosto -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Agosto">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Month"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Alta -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Alta">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Season"/>
+        <electricity-company:hasMonth rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Agosto"/>
+        <electricity-company:hasMonth rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Enero"/>
+        <electricity-company:hasMonth rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Julio"/>
+        <electricity-company:hasMonth rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Septiembre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/B-P2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/B-P2">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/SchedulerTime"/>
+        <electricity-company:hasDayType rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TipoB"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria18-22"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria9-14"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/B-P3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/B-P3">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/SchedulerTime"/>
+        <electricity-company:hasDayType rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TipoB"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria14-18"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria22-0"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria8-9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/B-P6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/B-P6">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/SchedulerTime"/>
+        <electricity-company:hasDayType rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TipoB"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria0-8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/B1-P3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/B1-P3">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/SchedulerTime"/>
+        <electricity-company:hasDayType rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TipoB1"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria18-22"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria9-14"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/B1-P4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/B1-P4">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/SchedulerTime"/>
+        <electricity-company:hasDayType rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TipoB1"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria14-18"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria22-0"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria8-9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/B1-P6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/B1-P6">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/SchedulerTime"/>
+        <electricity-company:hasDayType rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TipoB1"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria0-8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Baja -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Baja">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Season"/>
+        <electricity-company:hasMonth rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Abril"/>
+        <electricity-company:hasMonth rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Mayo"/>
+        <electricity-company:hasMonth rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Octubre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/C-P4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/C-P4">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/SchedulerTime"/>
+        <electricity-company:hasDayType rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TipoC"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria18-22"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria9-14"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/C-P5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/C-P5">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/SchedulerTime"/>
+        <electricity-company:hasDayType rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TipoC"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria14-18"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria22-0"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria8-9"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/C-P6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/C-P6">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/SchedulerTime"/>
+        <electricity-company:hasDayType rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TipoC"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria0-8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/D-P6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/D-P6">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/SchedulerTime"/>
+        <electricity-company:hasDayType rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TipoD"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria0-8"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria14-18"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria18-22"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria22-0"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria8-9"/>
+        <electricity-company:hasTimeSlot rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria9-14"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Diciembre -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Diciembre">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Month"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Domingo -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Domingo">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Day"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Enero -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Enero">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Month"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Febrero -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Febrero">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Month"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria0-8 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria0-8">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TimeSlot"/>
+        <electricity-company:startHour rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">0</electricity-company:startHour>
+        <electricity-company:startHour rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">8</electricity-company:startHour>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria14-18 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria14-18">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TimeSlot"/>
+        <electricity-company:endHour rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">18</electricity-company:endHour>
+        <electricity-company:startHour rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">14</electricity-company:startHour>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria18-22 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria18-22">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TimeSlot"/>
+        <electricity-company:endHour rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">22</electricity-company:endHour>
+        <electricity-company:startHour rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">18</electricity-company:startHour>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria22-0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria22-0">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TimeSlot"/>
+        <electricity-company:endHour rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">0</electricity-company:endHour>
+        <electricity-company:startHour rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">22</electricity-company:startHour>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria8-9 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria8-9">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TimeSlot"/>
+        <electricity-company:endHour rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">9</electricity-company:endHour>
+        <electricity-company:startHour rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">8</electricity-company:startHour>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria9-14 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/FranjaHoraria9-14">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/TimeSlot"/>
+        <electricity-company:endHour rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">14</electricity-company:endHour>
+        <electricity-company:startHour rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">9</electricity-company:startHour>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Jueves -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Jueves">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Day"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Julio -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Julio">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Month"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Junio -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Junio">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Month"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Lunes -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Lunes">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Day"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Martes -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Martes">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Day"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Marzo -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Marzo">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Month"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Mayo -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Mayo">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Month"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Media -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Media">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Season"/>
+        <electricity-company:hasMonth rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Agosto"/>
+        <electricity-company:hasMonth rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Junio"/>
+        <electricity-company:hasMonth rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Septiembre"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/MediaAlta -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/MediaAlta">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Season"/>
+        <electricity-company:hasMonth rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Diciembre"/>
+        <electricity-company:hasMonth rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Febrero"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Miercoles -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Miercoles">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Day"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Noviembre -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Noviembre">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Month"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Octubre -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Octubre">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Month"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/P1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/P1">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Period"/>
+        <electricity-company:hasSchedulerTime rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/A-P1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/P2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/P2">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Period"/>
+        <electricity-company:hasSchedulerTime rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/A-P2"/>
+        <electricity-company:hasSchedulerTime rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/B-P2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/P3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/P3">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Period"/>
+        <electricity-company:hasSchedulerTime rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/B-P3"/>
+        <electricity-company:hasSchedulerTime rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/B1-P3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/P4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/P4">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Period"/>
+        <electricity-company:hasSchedulerTime rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/B1-P4"/>
+        <electricity-company:hasSchedulerTime rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/C-P4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/P5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/P5">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Period"/>
+        <electricity-company:hasSchedulerTime rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/C-P5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/P6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/P6">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Period"/>
+        <electricity-company:hasSchedulerTime rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/A-P6"/>
+        <electricity-company:hasSchedulerTime rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/B-P6"/>
+        <electricity-company:hasSchedulerTime rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/B1-P6"/>
+        <electricity-company:hasSchedulerTime rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/C-P6"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Sabado -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Sabado">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Day"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Septiembre -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Septiembre">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Month"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/TipoA -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/TipoA">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/DayType"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Jueves"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Lunes"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Martes"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Miercoles"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Viernes"/>
+        <electricity-company:hasSeason rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Alta"/>
+        <electricity-company:dayOff rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</electricity-company:dayOff>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/TipoB -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/TipoB">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/DayType"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Jueves"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Lunes"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Martes"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Miercoles"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Viernes"/>
+        <electricity-company:hasSeason rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/MediaAlta"/>
+        <electricity-company:dayOff rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</electricity-company:dayOff>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/TipoB1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/TipoB1">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/DayType"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Jueves"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Lunes"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Martes"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Miercoles"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Viernes"/>
+        <electricity-company:hasSeason rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Media"/>
+        <electricity-company:dayOff rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</electricity-company:dayOff>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/TipoC -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/TipoC">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/DayType"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Jueves"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Lunes"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Martes"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Miercoles"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Viernes"/>
+        <electricity-company:hasSeason rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Baja"/>
+        <electricity-company:dayOff rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</electricity-company:dayOff>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/TipoD -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/TipoD">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/DayType"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Domingo"/>
+        <electricity-company:hasDay rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Sabado"/>
+        <electricity-company:dayOff rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</electricity-company:dayOff>
+        <rdfs:comment>https://www.boe.es/diario_boe/txt.php?id=BOE-A-2020-1066</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/electricity-company/Viernes -->
+
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/electricity-company/Viernes">
+        <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/electricity-company/Day"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
