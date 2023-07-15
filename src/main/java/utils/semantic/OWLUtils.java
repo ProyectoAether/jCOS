@@ -110,12 +110,12 @@ public class OWLUtils {
 
      this.hasContract =
             factory.getOWLObjectProperty(
-                    IRI.create("http://www.ontologies.khaos.uma.es/electricity-company/hasContract"));
+                    IRI.create("http://www.ontologies.khaos.uma.es/electricity/hasContract"));
 
 
      this.hasContractedPower =
             factory.getOWLObjectProperty(
-                    IRI.create("http://www.ontologies.khaos.uma.es/electricity-company/hasContractedPower"));
+                    IRI.create("http://www.ontologies.khaos.uma.es/electricity/hasContractedPower"));
 
     this.hasValueConsumption =
             factory.getOWLDataProperty(
@@ -160,16 +160,16 @@ public class OWLUtils {
   }
   private void setOwlUtils(){
     this.addImport(
-            "/home/cbarba/IdeaProjects/jMetalPrueba/src/main/resources/ontology/data-constraint.owl",
-            "http://www.ontologies.khaos.uma.es/data-constraint");
+            "/home/cbarba/IdeaProjects/jCOS/src/main/resources/ontology/COP.owl",
+            "http://www.ontologies.khaos.uma.es/COP");
     this.addImport(
-            "/home/cbarba/IdeaProjects/jMetalPrueba/src/main/resources/ontology/bigowlv6.owl",
+            "/home/cbarba/IdeaProjects/jCOS/src/main/resources/ontology/bigowlv6.owl",
             "http://www.ontologies.khaos.uma.es/bigowl");
     this.addImport(
-            "/home/cbarba/IdeaProjects/jMetalPrueba/src/main/resources/ontology/electricity-company.owl",
-            "http://www.ontologies.khaos.uma.es/electricity-company");
+            "/home/cbarba/IdeaProjects/jCOS/src/main/resources/ontology/electricity.owl",
+            "http://www.ontologies.khaos.uma.es/electricity");
     this.addImport(
-            "/home/cbarba/IdeaProjects/jMetalPrueba/src/main/resources/ontology/knapsack.owl",
+            "/home/cbarba/IdeaProjects/jCOS/src/main/resources/ontology/knapsack.owl",
             "http://www.ontologies.khaos.uma.es/knapsack");
     this.loadOntology();
 

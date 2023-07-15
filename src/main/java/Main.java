@@ -29,7 +29,7 @@ public class Main {
              ) {
             System.out.println(cliente.getCups());
         }*/
-        OWLUtils owlUtils = new OWLUtils();
+        OWLUtils owlUtils = new OWLUtils("src/main/resources/ontology/COP.owl");
         owlUtils.generateJSON("electrica.json", clientes);
         for (Cliente c:clientes) {
             c.setContractList(new ArrayList<>());

@@ -41,9 +41,9 @@ public class TestElectricas {
         .getIRIMappers()
         .add(
             new SimpleIRIMapper(
-                IRI.create("http://www.ontologies.khaos.uma.es/data-constraint"),
+                IRI.create("http://www.ontologies.khaos.uma.es/COP"),
                 IRI.create(
-                    "file:///home/cbarba/IdeaProjects/jMetalPrueba/src/main/resources/ontology/data-constraint.owl")));
+                    "file:///home/cbarba/IdeaProjects/jMetalPrueba/src/main/resources/ontology/COP.owl")));
     manager
         .getIRIMappers()
         .add(
@@ -56,9 +56,9 @@ public class TestElectricas {
               .getIRIMappers()
               .add(
                       new SimpleIRIMapper(
-                              IRI.create("http://www.ontologies.khaos.uma.es/electricity-company"),
+                              IRI.create("http://www.ontologies.khaos.uma.es/electricity"),
                               IRI.create(
-                                      "file:////home/cbarba/IdeaProjects/jMetalPrueba/src/main/resources/ontology/electricity-company.owl")));
+                                      "file:////home/cbarba/IdeaProjects/jMetalPrueba/src/main/resources/ontology/electricity.owl")));
 
     try {
       File file = new File(pathOWL);
@@ -107,12 +107,12 @@ public class TestElectricas {
 
         OWLObjectProperty hasContract =
                 factory.getOWLObjectProperty(
-                        IRI.create("http://www.ontologies.khaos.uma.es/electricity-company/hasContract"));
+                        IRI.create("http://www.ontologies.khaos.uma.es/electricity/hasContract"));
 
 
         OWLObjectProperty hasContractedPower =
                 factory.getOWLObjectProperty(
-                        IRI.create("http://www.ontologies.khaos.uma.es/electricity-company/hasContractedPower"));
+                        IRI.create("http://www.ontologies.khaos.uma.es/electricity/hasContractedPower"));
 
         OWLDataProperty hasValueConsumption =
                 factory.getOWLDataProperty(

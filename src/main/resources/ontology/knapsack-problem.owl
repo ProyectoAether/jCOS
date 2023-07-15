@@ -8,10 +8,10 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:bigowl="http://www.ontologies.khaos.uma.es/bigowl/"
      xmlns:knapsack="http://www.ontologies.khaos.uma.es/knapsack/"
-     xmlns:data-constraint="http://www.ontologies.khaos.uma.es/data-constraint#"
+     xmlns:COP="http://www.ontologies.khaos.uma.es/COP#"
      xmlns:knapsack-problem="http://www.ontologies.khaos.uma.es/knapsack-problem/">
     <owl:Ontology rdf:about="http://www.ontologies.khaos.uma.es/knapsack-problem">
-        <owl:imports rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint"/>
+        <owl:imports rdf:resource="http://www.ontologies.khaos.uma.es/COP"/>
         <owl:imports rdf:resource="http://www.ontologies.khaos.uma.es/knapsack"/>
     </owl:Ontology>
     

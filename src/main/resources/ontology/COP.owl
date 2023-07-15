@@ -8,8 +8,26 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:bigowl="http://www.ontologies.khaos.uma.es/bigowl/"
      xmlns:data-quality="http://www.ontologies.khaos.uma.es/data-quality/"
-     xmlns:data-constraint="http://www.ontologies.khaos.uma.es/data-constraint/">
-    <owl:Ontology rdf:about="http://www.ontologies.khaos.uma.es/data-constraint"/>
+     xmlns:COP="http://www.ontologies.khaos.uma.es/COP/"
+     xmlns:COP1="http://www.ontologies.khaos.uma.es/COP#">
+    <owl:Ontology rdf:about="http://www.ontologies.khaos.uma.es/COP"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/COP#pruebaAnnotation -->
+
+    <owl:AnnotationProperty rdf:about="http://www.ontologies.khaos.uma.es/COP#pruebaAnnotation"/>
     
 
 
@@ -21,6 +39,15 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.org/net/RO-optimization#hasFitnessFunction -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/net/RO-optimization#hasFitnessFunction">
+        <rdfs:domain rdf:resource="http://purl.org/net/RO-optimization#Fitness"/>
+        <rdfs:range rdf:resource="http://purl.org/net/RO-optimization#FitnessFunction"/>
+    </owl:ObjectProperty>
     
 
 
@@ -169,7 +196,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.ontologies.khaos.uma.es/bigowl/hasFunction">
         <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/AtomicConstraint"/>
-        <rdfs:range rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Function"/>
+        <rdfs:range rdf:resource="http://purl.org/net/RO-optimization#Function"/>
     </owl:ObjectProperty>
     
 
@@ -255,10 +282,19 @@
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/hasEnumerate -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/hasEnumerate -->
 
-    <owl:ObjectProperty rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/hasEnumerate">
+    <owl:ObjectProperty rdf:about="http://www.ontologies.khaos.uma.es/COP/hasEnumerate">
         <rdfs:range rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Enumerate"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.ontologies.khaos.uma.es/COP/hasFitness -->
+
+    <owl:ObjectProperty rdf:about="http://www.ontologies.khaos.uma.es/COP/hasFitness">
+        <rdfs:domain rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/ConstrainSatisfactionProblem"/>
+        <rdfs:range rdf:resource="http://purl.org/net/RO-optimization#Fitness"/>
     </owl:ObjectProperty>
     
 
@@ -325,9 +361,9 @@
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/hasPosition -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/hasPosition -->
 
-    <owl:DatatypeProperty rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/hasPosition">
+    <owl:DatatypeProperty rdf:about="http://www.ontologies.khaos.uma.es/COP/hasPosition">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -350,6 +386,42 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.org/net/RO-optimization#Fitness -->
+
+    <owl:Class rdf:about="http://purl.org/net/RO-optimization#Fitness"/>
+    
+
+
+    <!-- http://purl.org/net/RO-optimization#FitnessFunction -->
+
+    <owl:Class rdf:about="http://purl.org/net/RO-optimization#FitnessFunction">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/RO-optimization#Function"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/RO-optimization#Function -->
+
+    <owl:Class rdf:about="http://purl.org/net/RO-optimization#Function"/>
+    
+
+
+    <!-- http://purl.org/net/RO-optimization#MultiObjectiveFitness -->
+
+    <owl:Class rdf:about="http://purl.org/net/RO-optimization#MultiObjectiveFitness">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/RO-optimization#Fitness"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/net/RO-optimization#SingleObjectiveFitness -->
+
+    <owl:Class rdf:about="http://purl.org/net/RO-optimization#SingleObjectiveFitness">
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/RO-optimization#Fitness"/>
+    </owl:Class>
     
 
 
@@ -377,7 +449,9 @@
 
     <!-- http://www.ontologies.khaos.uma.es/bigowl/Attribute -->
 
-    <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/bigowl/Attribute"/>
+    <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/bigowl/Attribute">
+        <COP1:pruebaAnnotation>esto es una prueba</COP1:pruebaAnnotation>
+    </owl:Class>
     
 
 
@@ -392,7 +466,7 @@
     <!-- http://www.ontologies.khaos.uma.es/bigowl/BinaryFunction -->
 
     <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/bigowl/BinaryFunction">
-        <rdfs:subClassOf rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Function"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/RO-optimization#Function"/>
     </owl:Class>
     
 
@@ -432,7 +506,7 @@
     <!-- http://www.ontologies.khaos.uma.es/bigowl/ConstantFunction -->
 
     <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/bigowl/ConstantFunction">
-        <rdfs:subClassOf rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Function"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/RO-optimization#Function"/>
     </owl:Class>
     
 
@@ -522,12 +596,6 @@
     <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/bigowl/Exact">
         <rdfs:subClassOf rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/DataAnalysingAlgorithm"/>
     </owl:Class>
-    
-
-
-    <!-- http://www.ontologies.khaos.uma.es/bigowl/Function -->
-
-    <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/bigowl/Function"/>
     
 
 
@@ -692,7 +760,7 @@
     <!-- http://www.ontologies.khaos.uma.es/bigowl/UnaryFunction -->
 
     <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/bigowl/UnaryFunction">
-        <rdfs:subClassOf rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Function"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/net/RO-optimization#Function"/>
     </owl:Class>
     
 
@@ -703,10 +771,18 @@
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/TrajectoryMethod -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/TrajectoryMethod -->
 
-    <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/TrajectoryMethod">
+    <owl:Class rdf:about="http://www.ontologies.khaos.uma.es/COP/TrajectoryMethod">
         <rdfs:subClassOf rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Metaheuristic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON -->
+
+    <owl:Class rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON">
+        <rdfs:subClassOf rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Text"/>
     </owl:Class>
     
 
@@ -746,405 +822,405 @@
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/And -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/And -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/And">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/And">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/LogicOperator"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/AttributeHA -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/AttributeHA -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/AttributeHA">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/AttributeHA">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Attribute"/>
-        <bigowl:hasDMapDSToDM rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnHA"/>
+        <bigowl:hasDMapDSToDM rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnHA"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hA</bigowl:hasName>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/AttributeHB -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/AttributeHB -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/AttributeHB">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/AttributeHB">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Attribute"/>
-        <bigowl:hasDMapDSToDM rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnHB"/>
+        <bigowl:hasDMapDSToDM rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnHB"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hB</bigowl:hasName>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/AttributeNH -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/AttributeNH -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/AttributeNH">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/AttributeNH">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Attribute"/>
-        <bigowl:hasDMapDSToDM rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnNH"/>
+        <bigowl:hasDMapDSToDM rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnNH"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nH</bigowl:hasName>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/AttributeNRM -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/AttributeNRM -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/AttributeNRM">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/AttributeNRM">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Attribute"/>
-        <bigowl:hasDMapDSToDM rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnNRM"/>
+        <bigowl:hasDMapDSToDM rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnNRM"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nRM</bigowl:hasName>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/AttributePA -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/AttributePA -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/AttributePA">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/AttributePA">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Attribute"/>
-        <bigowl:hasDMapDSToDM rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnPA"/>
+        <bigowl:hasDMapDSToDM rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnPA"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pA</bigowl:hasName>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/AttributePB -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/AttributePB -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/AttributePB">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/AttributePB">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Attribute"/>
-        <bigowl:hasDMapDSToDM rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnPB"/>
+        <bigowl:hasDMapDSToDM rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnPB"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pB</bigowl:hasName>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/AttributeRMA -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/AttributeRMA -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/AttributeRMA">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/AttributeRMA">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Attribute"/>
-        <bigowl:hasDMapDSToDM rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnRMA"/>
+        <bigowl:hasDMapDSToDM rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnRMA"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rmA</bigowl:hasName>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/AttributeRMB -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/AttributeRMB -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/AttributeRMB">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/AttributeRMB">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Attribute"/>
-        <bigowl:hasDMapDSToDM rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnRMB"/>
+        <bigowl:hasDMapDSToDM rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnRMB"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rmb</bigowl:hasName>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/ColumnComp -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/ColumnComp -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/ColumnComp">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/ColumnComp">
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Comp.</bigowl:hasName>
         <bigowl:hasPositionInSuperColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">1</bigowl:hasPositionInSuperColumn>
-        <data-constraint:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">13</data-constraint:hasPosition>
+        <COP:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">13</COP:hasPosition>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/ColumnHA -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/ColumnHA -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/ColumnHA">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/ColumnHA">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Column"/>
-        <bigowl:hasDMapDMToCOP rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/VariableHoursA"/>
+        <bigowl:hasDMapDMToCOP rdf:resource="http://www.ontologies.khaos.uma.es/COP/VariableHoursA"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hA</bigowl:hasName>
         <bigowl:hasPositionInSuperColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">3</bigowl:hasPositionInSuperColumn>
-        <data-constraint:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">4</data-constraint:hasPosition>
+        <COP:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">4</COP:hasPosition>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/ColumnHB -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/ColumnHB -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/ColumnHB">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/ColumnHB">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Column"/>
-        <bigowl:hasDMapDMToCOP rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/VariableHoursB"/>
+        <bigowl:hasDMapDMToCOP rdf:resource="http://www.ontologies.khaos.uma.es/COP/VariableHoursB"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hb</bigowl:hasName>
         <bigowl:hasPositionInSuperColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">6</bigowl:hasPositionInSuperColumn>
-        <data-constraint:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">7</data-constraint:hasPosition>
+        <COP:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">7</COP:hasPosition>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/ColumnID -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/ColumnID -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/ColumnID">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/ColumnID">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Column"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ID</bigowl:hasName>
-        <data-constraint:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">1</data-constraint:hasPosition>
+        <COP:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">1</COP:hasPosition>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/ColumnNH -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/ColumnNH -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/ColumnNH">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/ColumnNH">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Column"/>
-        <bigowl:hasDMapDMToCOP rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/VariableHoursLabor"/>
+        <bigowl:hasDMapDMToCOP rdf:resource="http://www.ontologies.khaos.uma.es/COP/VariableHoursLabor"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nH</bigowl:hasName>
         <bigowl:hasPositionInSuperColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">1</bigowl:hasPositionInSuperColumn>
-        <data-constraint:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">2</data-constraint:hasPosition>
+        <COP:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">2</COP:hasPosition>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/ColumnNRM -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/ColumnNRM -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/ColumnNRM">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/ColumnNRM">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Column"/>
-        <bigowl:hasDMapDMToCOP rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/VariableUnitsRawMaterial"/>
+        <bigowl:hasDMapDMToCOP rdf:resource="http://www.ontologies.khaos.uma.es/COP/VariableUnitsRawMaterial"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nRM</bigowl:hasName>
         <bigowl:hasPositionInSuperColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">2</bigowl:hasPositionInSuperColumn>
-        <data-constraint:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">3</data-constraint:hasPosition>
+        <COP:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">3</COP:hasPosition>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/ColumnPA -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/ColumnPA -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/ColumnPA">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/ColumnPA">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Column"/>
-        <bigowl:hasDMapDMToCOP rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/VariablePriceA"/>
+        <bigowl:hasDMapDMToCOP rdf:resource="http://www.ontologies.khaos.uma.es/COP/VariablePriceA"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PA</bigowl:hasName>
         <bigowl:hasPositionInSuperColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">5</bigowl:hasPositionInSuperColumn>
-        <data-constraint:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">6</data-constraint:hasPosition>
+        <COP:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">6</COP:hasPosition>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/ColumnPB -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/ColumnPB -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/ColumnPB">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/ColumnPB">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Column"/>
-        <bigowl:hasDMapDMToCOP rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/VariableRawB"/>
+        <bigowl:hasDMapDMToCOP rdf:resource="http://www.ontologies.khaos.uma.es/COP/VariableRawB"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pb</bigowl:hasName>
         <bigowl:hasPositionInSuperColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">8</bigowl:hasPositionInSuperColumn>
-        <data-constraint:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">9</data-constraint:hasPosition>
+        <COP:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">9</COP:hasPosition>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/ColumnProfit -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/ColumnProfit -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/ColumnProfit">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/ColumnProfit">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Column"/>
-        <bigowl:hasDMapDMToCOP rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/VariableProfit"/>
+        <bigowl:hasDMapDMToCOP rdf:resource="http://www.ontologies.khaos.uma.es/COP/VariableProfit"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">profit</bigowl:hasName>
         <bigowl:hasPositionInSuperColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">1</bigowl:hasPositionInSuperColumn>
-        <data-constraint:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">10</data-constraint:hasPosition>
+        <COP:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">10</COP:hasPosition>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/ColumnQA -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/ColumnQA -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/ColumnQA">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/ColumnQA">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Column"/>
-        <bigowl:hasDMapDMToCOP rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/VariableNumUnitsA"/>
+        <bigowl:hasDMapDMToCOP rdf:resource="http://www.ontologies.khaos.uma.es/COP/VariableNumUnitsA"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">qa</bigowl:hasName>
         <bigowl:hasPositionInSuperColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">2</bigowl:hasPositionInSuperColumn>
-        <data-constraint:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">11</data-constraint:hasPosition>
+        <COP:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">11</COP:hasPosition>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/ColumnQB -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/ColumnQB -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/ColumnQB">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/ColumnQB">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Column"/>
-        <bigowl:hasDMapDMToCOP rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/VariableNumUnitsB"/>
+        <bigowl:hasDMapDMToCOP rdf:resource="http://www.ontologies.khaos.uma.es/COP/VariableNumUnitsB"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">qb</bigowl:hasName>
         <bigowl:hasPositionInSuperColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">3</bigowl:hasPositionInSuperColumn>
-        <data-constraint:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">12</data-constraint:hasPosition>
+        <COP:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">12</COP:hasPosition>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/ColumnRMA -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/ColumnRMA -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/ColumnRMA">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/ColumnRMA">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Column"/>
-        <bigowl:hasDMapDMToCOP rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/VariableRawA"/>
+        <bigowl:hasDMapDMToCOP rdf:resource="http://www.ontologies.khaos.uma.es/COP/VariableRawA"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rma</bigowl:hasName>
         <bigowl:hasPositionInSuperColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">4</bigowl:hasPositionInSuperColumn>
-        <data-constraint:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">5</data-constraint:hasPosition>
+        <COP:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">5</COP:hasPosition>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/ColumnRMB -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/ColumnRMB -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/ColumnRMB">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/ColumnRMB">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Column"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rmb</bigowl:hasName>
         <bigowl:hasPositionInSuperColumn rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">7</bigowl:hasPositionInSuperColumn>
-        <data-constraint:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">8</data-constraint:hasPosition>
+        <COP:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">8</COP:hasPosition>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/DIVIDE -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/DIVIDE -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/DIVIDE">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/DIVIDE">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/FunctionOperator"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/DatasetExample -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/DatasetExample -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/DatasetExample">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/DatasetExample">
         <rdf:type rdf:resource="http://www.e-lico.eu/ontologies/dmo/DMOP/DMOP.owl#DataSetClass"/>
-        <bigowl:hasAttribute rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/AttributeHA"/>
-        <bigowl:hasAttribute rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/AttributeHB"/>
-        <bigowl:hasAttribute rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/AttributeNH"/>
-        <bigowl:hasAttribute rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/AttributeNRM"/>
-        <bigowl:hasAttribute rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/AttributePA"/>
-        <bigowl:hasAttribute rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/AttributePB"/>
-        <bigowl:hasAttribute rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/AttributeRMB"/>
-        <bigowl:hasAttribute rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnRMA"/>
+        <bigowl:hasAttribute rdf:resource="http://www.ontologies.khaos.uma.es/COP/AttributeHA"/>
+        <bigowl:hasAttribute rdf:resource="http://www.ontologies.khaos.uma.es/COP/AttributeHB"/>
+        <bigowl:hasAttribute rdf:resource="http://www.ontologies.khaos.uma.es/COP/AttributeNH"/>
+        <bigowl:hasAttribute rdf:resource="http://www.ontologies.khaos.uma.es/COP/AttributeNRM"/>
+        <bigowl:hasAttribute rdf:resource="http://www.ontologies.khaos.uma.es/COP/AttributePA"/>
+        <bigowl:hasAttribute rdf:resource="http://www.ontologies.khaos.uma.es/COP/AttributePB"/>
+        <bigowl:hasAttribute rdf:resource="http://www.ontologies.khaos.uma.es/COP/AttributeRMB"/>
+        <bigowl:hasAttribute rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnRMA"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/EQUAL -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/EQUAL -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/EQUAL">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/EQUAL">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Comparator"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/GREATER -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/GREATER -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/GREATER">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/GREATER">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Comparator"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/GREATER_EQUAL -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/GREATER_EQUAL -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/GREATER_EQUAL">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/GREATER_EQUAL">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Comparator"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/LESS -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/LESS -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/LESS">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/LESS">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Comparator"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/LESS_EQUAL -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/LESS_EQUAL -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/LESS_EQUAL">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/LESS_EQUAL">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Comparator"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/MINUS -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/MINUS -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/MINUS">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/MINUS">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/FunctionOperator"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/MULTIPLY -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/MULTIPLY -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/MULTIPLY">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/MULTIPLY">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/FunctionOperator"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/NOT_EQUAL -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/NOT_EQUAL -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/NOT_EQUAL">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/NOT_EQUAL">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Comparator"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/Or -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/Or -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/Or">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/Or">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/LogicOperator"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/PLUS -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/PLUS -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/PLUS">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/PLUS">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/FunctionOperator"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/SuperColumnIN -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/SuperColumnIN -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/SuperColumnIN">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/SuperColumnIN">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/SuperColumn"/>
-        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnHA"/>
-        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnHB"/>
-        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnID"/>
-        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnNH"/>
-        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnNRM"/>
-        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnPA"/>
-        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnPB"/>
-        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnRMA"/>
-        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnRMB"/>
+        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnHA"/>
+        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnHB"/>
+        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnID"/>
+        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnNH"/>
+        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnNRM"/>
+        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnPA"/>
+        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnPB"/>
+        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnRMA"/>
+        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnRMB"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IN</bigowl:hasName>
-        <data-constraint:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">2</data-constraint:hasPosition>
+        <COP:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">2</COP:hasPosition>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/SuperColumnOT -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/SuperColumnOT -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/SuperColumnOT">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/SuperColumnOT">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/SuperColumn"/>
-        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnComp"/>
+        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnComp"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OT</bigowl:hasName>
-        <data-constraint:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">4</data-constraint:hasPosition>
+        <COP:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">4</COP:hasPosition>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/SuperColumnOut -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/SuperColumnOut -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/SuperColumnOut">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/SuperColumnOut">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/SuperColumn"/>
-        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnProfit"/>
-        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnQA"/>
-        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnQB"/>
+        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnProfit"/>
+        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnQA"/>
+        <bigowl:hasColumnInSuperColumn rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnQB"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">OUT</bigowl:hasName>
-        <data-constraint:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">3</data-constraint:hasPosition>
+        <COP:hasPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#unsignedInt">3</COP:hasPosition>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/TuplesRunningExample -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/TuplesRunningExample -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/TuplesRunningExample">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/TuplesRunningExample">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/DataModel"/>
-        <bigowl:hasColumn rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/ColumnID"/>
-        <bigowl:hasINColumn rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/SuperColumnIN"/>
+        <bigowl:hasColumn rdf:resource="http://www.ontologies.khaos.uma.es/COP/ColumnID"/>
+        <bigowl:hasINColumn rdf:resource="http://www.ontologies.khaos.uma.es/COP/SuperColumnIN"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/VariableHoursA -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/VariableHoursA -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/VariableHoursA">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/VariableHoursA">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/COPVariable"/>
         <bigowl:hasDataType rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Integer"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hoursA</bigowl:hasName>
@@ -1152,9 +1228,9 @@
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/VariableHoursB -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/VariableHoursB -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/VariableHoursB">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/VariableHoursB">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/COPVariable"/>
         <bigowl:hasDataType rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Integer"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hoursB</bigowl:hasName>
@@ -1162,9 +1238,9 @@
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/VariableHoursLabor -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/VariableHoursLabor -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/VariableHoursLabor">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/VariableHoursLabor">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/COPVariable"/>
         <bigowl:hasDataType rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Integer"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hoursLabor</bigowl:hasName>
@@ -1172,9 +1248,9 @@
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/VariableNumUnitsA -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/VariableNumUnitsA -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/VariableNumUnitsA">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/VariableNumUnitsA">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/COPVariable"/>
         <bigowl:hasDataType rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Integer"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">numUnitsA</bigowl:hasName>
@@ -1182,9 +1258,9 @@
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/VariableNumUnitsB -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/VariableNumUnitsB -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/VariableNumUnitsB">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/VariableNumUnitsB">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/COPVariable"/>
         <bigowl:hasDataType rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Integer"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">numUnitsB</bigowl:hasName>
@@ -1192,19 +1268,19 @@
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/VariablePriceA -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/VariablePriceA -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/VariablePriceA">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/VariablePriceA">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/COPVariable"/>
-        <bigowl:hasDataType rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/VariablePriceA"/>
+        <bigowl:hasDataType rdf:resource="http://www.ontologies.khaos.uma.es/COP/VariablePriceA"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">priceA</bigowl:hasName>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/VariableProfit -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/VariableProfit -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/VariableProfit">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/VariableProfit">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/COPVariable"/>
         <bigowl:hasDataType rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Integer"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">profit</bigowl:hasName>
@@ -1212,9 +1288,9 @@
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/VariableRawA -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/VariableRawA -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/VariableRawA">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/VariableRawA">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/COPVariable"/>
         <bigowl:hasDataType rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Integer"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rawA</bigowl:hasName>
@@ -1222,9 +1298,9 @@
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/VariableRawB -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/VariableRawB -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/VariableRawB">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/VariableRawB">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/COPVariable"/>
         <bigowl:hasDataType rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/Integer"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rawB</bigowl:hasName>
@@ -1232,11 +1308,11 @@
     
 
 
-    <!-- http://www.ontologies.khaos.uma.es/data-constraint/VariableUnitsRawMaterial -->
+    <!-- http://www.ontologies.khaos.uma.es/COP/VariableUnitsRawMaterial -->
 
-    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/data-constraint/VariableUnitsRawMaterial">
+    <owl:NamedIndividual rdf:about="http://www.ontologies.khaos.uma.es/COP/VariableUnitsRawMaterial">
         <rdf:type rdf:resource="http://www.ontologies.khaos.uma.es/bigowl/COPVariable"/>
-        <bigowl:hasDataType rdf:resource="http://www.ontologies.khaos.uma.es/data-constraint/VariableUnitsRawMaterial"/>
+        <bigowl:hasDataType rdf:resource="http://www.ontologies.khaos.uma.es/COP/VariableUnitsRawMaterial"/>
         <bigowl:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unitsRawMaterial</bigowl:hasName>
     </owl:NamedIndividual>
 </rdf:RDF>
