@@ -159,17 +159,18 @@ public class OWLUtils {
     //"src/main/resources/ontology/knapsack-problem.owl"
   }
   private void setOwlUtils(){
+    String path =System.getProperty("user.dir");
     this.addImport(
-            "/home/cbarba/IdeaProjects/jCOS/src/main/resources/ontology/COP.owl",
+            path+"/src/main/resources/ontology/COP.owl",
             "http://www.ontologies.khaos.uma.es/COP");
     this.addImport(
-            "/home/cbarba/IdeaProjects/jCOS/src/main/resources/ontology/bigowlv6.owl",
+            path+"/src/main/resources/ontology/bigowlv6.owl",
             "http://www.ontologies.khaos.uma.es/bigowl");
     this.addImport(
-            "/home/cbarba/IdeaProjects/jCOS/src/main/resources/ontology/electricity.owl",
+            path+"/src/main/resources/ontology/electricity.owl",
             "http://www.ontologies.khaos.uma.es/electricity");
     this.addImport(
-            "/home/cbarba/IdeaProjects/jCOS/src/main/resources/ontology/knapsack.owl",
+            path+"/src/main/resources/ontology/knapsack.owl",
             "http://www.ontologies.khaos.uma.es/knapsack");
     this.loadOntology();
 
