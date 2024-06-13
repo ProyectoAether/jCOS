@@ -1,1 +1,2 @@
 # jCOS
+Optimisation multi-solver
